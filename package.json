@@ -1,0 +1,20 @@
+{
+  "name": "freelancer-saas-architecture",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:web": "npm --prefix apps/web run dev",
+    "dev:api": "npm --prefix apps/api run start:dev",
+    "build:web": "npm --prefix apps/web run build",
+    "build:api": "npm --prefix apps/api run build",
+    "build": "npm run build:web && npm run build:api",
+    "lint:web": "npm --prefix apps/web run lint",
+    "test:api": "npm --prefix apps/api run test && npm --prefix apps/api run test:e2e",
+    "test:web": "npm run lint:web && npm run build:web",
+    "test": "npm run test:web && npm run test:api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

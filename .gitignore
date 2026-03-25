@@ -1,0 +1,9 @@
+node_modules/
+apps/node_modules/
+apps/web/.next/
+apps/api/dist/
+apps/api/coverage/
+.env
+.env.*
+!.env.example
+!.env.local.example
